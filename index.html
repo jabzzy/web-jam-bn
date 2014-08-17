@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Пишем приложение для ВКонтакте на bem-node</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="bower_components/shower-ribbon/styles/screen.css">
+</head>
+<body class="list">
+	<!--
+		Debug class on <body> enables
+		cyan grid on slides
+		-->
+	<header class="caption">
+		<h1>Пишем приложение для ВКонтакте на bem-node</h1>
+		<p>Евгений Дашкевич и Михаил Пешехонов</p>
+	</header>
+	<section class="slide shout">
+		<div>
+			<h2>Что такое BEM?</h2>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Что такое BEM?</h2>
+			<ul>
+				<li>методология создания веб-приложений</li>
+				<li>способ удобно делить интерфейс на независимые части</li>
+				<li>набор инструментов для автоматизации</li>
+				<li>возможность создания библиотек web-компонентов для быстрой и эффективной разработки</li>
+			</ul>
+			<p class="note">
+				<a href="http://ru.bem.info/tutorials/start-with-project-stub#Что-такое-БЭМ-">bem.info/tutorials/start-with-project-stub</a>
+			</p>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<img width="100%" src="http://img-fotki.yandex.ru/get/5008/221798411.0/0_babce_7deef28f_XXL.png" alt="">
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<pre>
+				<code>{</code>
+				<code>	block: 'head',</code>
+				<code>	content: [</code>
+				<code>		{ block: 'menu', content: … },</code>
+				<code>		{ block: 'logo', mix: { elem: 'logo' } },</code>
+				<code>		{ block: 'search', content: … },</code>
+		        <code>		{ block: 'auth', content: … }</code>
+		        <code>	]</code>
+		        <code>}</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>bem-node?</h2>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Как это работает?</h2>
+			<p>Основной принцип в представлении шаблона страницы в виде BEMJSON-объекта. Шаблоны блоков применяются к BEMJSON-дереву для получения готового шаблона с данными.
+			 BEMJSON затем сериализуется в HTML. Бла, бла, бла…</p>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>В чем мякотка?</h2>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>.js + .common.js + .priv.js</h2>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Страницы</h2>
+			<pre>
+				<code>BN.addDecl('hello-world', 'page', {</code>
+				<code>    route: /^\/$/</code>
+				<code>}).staticProp({</code>
+				<code>    init: function () {</code>
+				<code>        return this.out('hello world');</code>
+				<code>    }</code>
+				<code>});</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Данные для страниц</h2>
+			<pre>
+				<code>BN.addDecl('example-ajax-block', 'ajax', {</code>
+				<code>    apiHost: 'http://api.example.com/v1/'</code>
+				<code>});</code>
+			</pre>
+			<pre>
+				<code>BN('example-ajax-block').get('some/resource', {</code>
+				<code>    params: { count: 10 }</code>
+				<code>}).then(function(result){ &hellip; });</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Блоки</h2>
+			<pre>
+				<code>BN.addDecl('example').blockTemplate(function (ctx) {</code>
+				<code>    ctx.content([</code>
+				<code>        {elem: 'item', url: 'item-1', text: 'item 1'},</code>
+				<code>        {elem: 'item', url: 'item-1', text: 'item 2'}</code>
+				<code>    ]);</code>
+				<code>});</code>
+			</pre>
+			<p class="note">элементы почти так же</p>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2><a href="https://github.com/bem-node/bem-node">github/bem-node</a></h2>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>Coding time!</h2>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Закончили!</h2>
+			<p>Евгений Дашкевич<br><a href="https://twitter.com/_jabs_">twitter.com/_jabs_</a></p>
+			<p>Михаил Пешехонов<br><a href="https://twitter.com/Peshekhonov">twitter.com/Peshekhonov</a></p>
+		</div>
+	</section>
+	<div class="progress"><div></div></div>
+	<script src="bower_components/shower-core/shower.min.js"></script>
+</body>
+</html>
