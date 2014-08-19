@@ -6,6 +6,13 @@
 	<meta name="viewport" content="width=792, user-scalable=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<link rel="stylesheet" href="bower_components/shower-ribbon/styles/screen.css">
+	<style>
+		.speak-up
+		{
+			font-size: 2em;
+			white-space: nowrap;
+		}
+	</style>
 </head>
 <body class="list">
 	<!--
@@ -16,9 +23,22 @@
 		<h1>Пишем приложение для ВКонтакте на bem-node</h1>
 		<p>Евгений Дашкевич и Михаил Пешехонов</p>
 	</header>
-	<section class="slide shout">
+	<section class="slide cover" style="background: #fff">
 		<div>
-			<h2>Что такое BEM?</h2>
+			<div class="place">
+				<h2>Пишем приложение для ВКонтакте на bem-node</h2>
+				<p>Евгений Дашкевич и Михаил Пешехонов</p>
+			</div>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2 class="place speak-up">BEM? WTF?</h2>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<img class="place" src="http://img-fotki.yandex.ru/get/5008/221798411.0/0_babce_7deef28f_XXL.png" alt="">
 		</div>
 	</section>
 	<section class="slide">
@@ -26,58 +46,33 @@
 			<h2>Что такое BEM?</h2>
 			<ul>
 				<li>методология создания веб-приложений</li>
-				<li>способ удобно делить интерфейс на независимые части</li>
-				<li>набор инструментов для автоматизации</li>
-				<li>возможность создания библиотек web-компонентов для быстрой и эффективной разработки</li>
+				<li class="next">способ удобно делить интерфейс на независимые части</li>
+				<li class="next">набор инструментов для автоматизации</li>
+				<li class="next">возможность создания библиотек web-компонентов и фреймворков</li>
 			</ul>
-			<p class="note">
+			<p class="note next">
 				<a href="http://ru.bem.info/tutorials/start-with-project-stub#Что-такое-БЭМ-">bem.info/tutorials/start-with-project-stub</a>
 			</p>
 		</div>
 	</section>
 	<section class="slide">
 		<div>
-			<img width="100%" src="http://img-fotki.yandex.ru/get/5008/221798411.0/0_babce_7deef28f_XXL.png" alt="">
+			<h2 class="place speak-up">bem-node?</h2>
 		</div>
+		<!-- есть задача сделать сервис. Киевляне сделали универсальный фреймворк на БЭМ-подходе -->
 	</section>
 	<section class="slide">
 		<div>
-			<pre>
-				<code>{</code>
-				<code>	block: 'head',</code>
-				<code>	content: [</code>
-				<code>		{ block: 'menu', content: … },</code>
-				<code>		{ block: 'logo', mix: { elem: 'logo' } },</code>
-				<code>		{ block: 'search', content: … },</code>
-		        <code>		{ block: 'auth', content: … }</code>
-		        <code>	]</code>
-		        <code>}</code>
-			</pre>
+			<img style="width: 70%" class="place" src="https://camo.githubusercontent.com/3f210a843676d2f367ddb52d1ed1799a3de40416/687474703a2f2f6661726d362e737461746963666c69636b722e636f6d2f353533372f31303438313438303931355f646432636135316161612e6a7067" alt="">
 		</div>
-	</section>
-	<section class="slide shout">
-		<div>
-			<h2>bem-node?</h2>
-		</div>
+		<!-- Как это работает? -->
 	</section>
 	<section class="slide">
 		<div>
-			<h2>Как это работает?</h2>
-			<p>Основной принцип в представлении шаблона страницы в виде BEMJSON-объекта. Шаблоны блоков применяются к BEMJSON-дереву для получения готового шаблона с данными.
-			 BEMJSON затем сериализуется в HTML. Бла, бла, бла…</p>
+			<p class="place speak-up"><code>.js</code> + <code>.common.js</code> + <code>.priv.js</code></p>
 		</div>
 	</section>
-	<section class="slide shout">
-		<div>
-			<h2>В чем мякотка?</h2>
-		</div>
-	</section>
-	<section class="slide shout">
-		<div>
-			<h2>.js + .common.js + .priv.js</h2>
-		</div>
-	</section>
-	<section class="slide">
+	<!-- <section class="slide">
 		<div>
 			<h2>Страницы</h2>
 			<pre>
@@ -119,10 +114,10 @@
 			</pre>
 			<p class="note">элементы почти так же</p>
 		</div>
-	</section>
-	<section class="slide shout">
+	</section> -->
+	<section class="slide">
 		<div>
-			<h2><a href="https://github.com/bem-node/bem-node">github/bem-node</a></h2>
+			<h2 class="place speak-up"><a href="https://github.com/bem-node/bem-node">github.com/bem-node</a></h2>
 		</div>
 	</section>
 	<section class="slide shout">
@@ -130,19 +125,18 @@
 			<h2>Coding time!</h2>
 		</div>
 	</section>
-	<section class="slide shout">
-		<div style="font-size: 2em;">
-			<p>
+	<section class="slide">
+		<div>
+			<p class="place speak-up">
 				репозиторий – <a href="http://bit.ly/vk-insta">bit.ly/vk-insta</a>
-			</p>
-			<p>
+				<br>
 				приложение – <a href="https://vk.com/instaflat">vk.com/instaflat</a>
 			</p>
 		</div>
 	</section>
 	<section class="slide">
 		<div>
-			<h2>Закончили!</h2>
+			<h2>Закончили! Вопросы?</h2>
 			<p>Евгений Дашкевич<br><a href="https://twitter.com/_jabs_">twitter.com/_jabs_</a></p>
 			<p>Михаил Пешехонов<br><a href="https://vk.com/m.peshekhonov">vk.com/m.peshekhonov</a></p>
 		</div>
